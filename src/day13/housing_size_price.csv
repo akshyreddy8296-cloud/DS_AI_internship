@@ -1,0 +1,11 @@
+House_ID,SquareFoot,Price,LocationType
+1,800,120000,Rural
+2,1000,150000,Rural
+3,1200,200000,Suburban
+4,1500,250000,Suburban
+5,1800,300000,Urban
+6,2000,320000,Urban
+7,2200,360000,Urban
+8,2500,420000,Urban
+9,2700,450000,Suburban
+10,3000,500000,Urban
