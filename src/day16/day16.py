@@ -67,38 +67,37 @@ print("\nTotal Outliers Found:", len(outliers))
 
 
 
+
+
 ###### task 3 #####
-# Import libraries
+print("\nTask 3: The Magic of Averages (Central Limit Theorem)\n")
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 np.random.seed(42)
-
-population = np.random.exponential(scale=50000, size=100000)
+original_data = np.random.exponential(scale=2, size=10000)
 
 plt.figure(figsize=(12,4))
-
 plt.subplot(1,2,1)
-sns.histplot(population, kde=True)
-plt.title("Original Population (Skewed Income Data)")
+sns.histplot(original_data, kde=True)
+plt.title("Original Data (Right-Skewed)")
 
 sample_means = []
-
 for i in range(1000):
-    sample = np.random.choice(population, size=30)
-    sample_mean = np.mean(sample)
-    sample_means.append(sample_mean)
+    sample = np.random.choice(original_data, size=30)
+    sample_means.append(np.mean(sample))
 
+sample_means = pd.Series(sample_means)
 plt.subplot(1,2,2)
 sns.histplot(sample_means, kde=True)
-plt.title("Distribution of 1000 Sample Means (n=30)")
-
+plt.title("Distribution of Sample Means (n=30)")
 plt.tight_layout()
 plt.show()
-
-print("Population Mean:", np.mean(population))
-print("Mean of Sample Means:", np.mean(sample_means))
+print("\nOriginal Data Mean:", np.mean(original_data))
+print("\nMean of Sample Means:", np.mean(sample_means))
+print("\nStandard Deviation of Sample Means:", np.std(sample_means))
 
 
 
